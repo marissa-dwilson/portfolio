@@ -96,6 +96,18 @@ footer{border-top:0.5px solid var(--rule);padding:2rem 3rem;display:flex;align-i
 .footer-text{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:var(--muted);text-transform:uppercase}
 .footer-back{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;color:var(--muted);text-transform:uppercase;transition:color 0.2s;cursor:pointer;background:none;border:none;padding:0}
 .footer-back:hover{color:var(--sky-accent)}
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(26,58,74,0.55);z-index:200;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal-box{background:var(--white);border-radius:8px;padding:2.5rem;max-width:660px;width:90%;max-height:82vh;display:flex;flex-direction:column;gap:1.25rem}
+.modal-header{display:flex;align-items:baseline;justify-content:space-between}
+.modal-title{font-family:var(--serif);font-size:28px;font-weight:300;color:var(--ink)}
+.modal-close{font-family:var(--mono);font-size:11px;color:var(--muted);cursor:pointer;letter-spacing:0.08em;text-transform:uppercase;background:none;border:none;padding:0}
+.modal-close:hover{color:var(--ink)}
+.modal-desc{font-size:14px;color:var(--muted);line-height:1.7;font-weight:300}
+.modal-prompt{background:var(--soft);border:0.5px solid var(--rule);border-radius:6px;padding:1.25rem;font-family:var(--mono);font-size:12px;color:var(--text);line-height:1.75;overflow-y:auto;max-height:260px;white-space:pre-wrap;word-break:break-word;flex:1}
+.modal-copy-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:11px 22px;background:var(--sky-accent);color:var(--white);border:none;border-radius:2px;cursor:pointer;transition:background 0.2s}
+.modal-copy-btn:hover{background:var(--navy-mid)}
 
 @media(max-width:768px){
   .entry{grid-template-columns:1fr;gap:2rem}
@@ -217,27 +229,11 @@ footer{border-top:0.5px solid var(--rule);padding:2rem 3rem;display:flex;align-i
 <!-- FEED -->
 <div class="feed">
 
-  <!-- 01 YUDI -->
+  <!-- 01 SHELF -->
   <div class="entry">
     <div class="entry-left">
       <div class="entry-meta">
         <span class="entry-num">01</span>
-        <div class="entry-dot"></div>
-        <span class="entry-tag">Product strategy · Marketing · Business development</span>
-      </div>
-      <div class="entry-title"><em>Yudi</em> — Loan Origination for Non-Traditional Lenders</div>
-      <p class="entry-body">Yudi replaces manual, fragmented lending workflows with instant pre-qualification, a centralized document system, and structured underwriting tools that turn borrower data into clear, decision-ready loans.</p>
-    </div>
-    <div class="entry-right">
-      <a class="btn btn-fill" href="https://www.youtube.com/watch?v=3EwgWmL3sHk" target="_blank">Watch the demo ↗</a>
-    </div>
-  </div>
-
-  <!-- 02 SHELF -->
-  <div class="entry">
-    <div class="entry-left">
-      <div class="entry-meta">
-        <span class="entry-num">02</span>
         <div class="entry-dot"></div>
         <span class="entry-tag">Validation · Research · Product development</span>
       </div>
@@ -249,11 +245,11 @@ footer{border-top:0.5px solid var(--rule);padding:2rem 3rem;display:flex;align-i
     </div>
   </div>
 
-  <!-- 03 TORI -->
+  <!-- 02 TORI -->
   <div class="entry">
     <div class="entry-left">
       <div class="entry-meta">
-        <span class="entry-num">03</span>
+        <span class="entry-num">02</span>
         <div class="entry-dot"></div>
         <span class="entry-tag">Product development</span>
       </div>
@@ -265,6 +261,120 @@ footer{border-top:0.5px solid var(--rule);padding:2rem 3rem;display:flex;align-i
     </div>
   </div>
 
+  <!-- 03 INVOICE GENERATOR -->
+  <div class="entry">
+    <div class="entry-left">
+      <div class="entry-meta">
+        <span class="entry-num">03</span>
+        <div class="entry-dot"></div>
+        <span class="entry-tag">Claude prompt · Billing automation</span>
+      </div>
+      <div class="entry-title">Invoice Generator</div>
+      <p class="entry-body">Pulls time entries from Notion, calculates hours, and generates a branded client invoice as a .docx file. Built to run my own consulting billing — reusable as a Claude prompt you can adapt for yours.</p>
+    </div>
+    <div class="entry-right">
+      <button class="btn btn-fill" onclick="openModal('invoice')">Copy prompt ↗</button>
+    </div>
+  </div>
+
+  <!-- 04 COMPETITIVE PRICING DASHBOARD -->
+  <div class="entry">
+    <div class="entry-left">
+      <div class="entry-meta">
+        <span class="entry-num">04</span>
+        <div class="entry-dot"></div>
+        <span class="entry-tag">Market research · Interactive tool</span>
+      </div>
+      <div class="entry-title">Competitive Pricing Dashboard</div>
+      <p class="entry-body">Interactive HTML dashboard for mapping competitor pricing across any market. Built live for two clients — see the WorkSmart research and MDW fractional GTM analysis as working examples.</p>
+    </div>
+    <div class="entry-right">
+      <a class="btn btn-fill" href="https://claude.ai/public/artifacts/5576a852-9bc5-4c66-867e-7beb3bf95658" target="_blank">WorkSmart ↗</a>
+      <a class="btn btn-fill" href="https://claude.ai/public/artifacts/22a30016-e950-448d-b918-39a38b2fc501" target="_blank">MDW research ↗</a>
+    </div>
+  </div>
+
+  <!-- 05 PLATFORM STRATEGY BUILDER -->
+  <div class="entry">
+    <div class="entry-left">
+      <div class="entry-meta">
+        <span class="entry-num">05</span>
+        <div class="entry-dot"></div>
+        <span class="entry-tag">Claude prompt · Strategy tooling</span>
+      </div>
+      <div class="entry-title">Platform Strategy Builder</div>
+      <p class="entry-body">A 9-element pitch framework that turns a rough business idea into an investor-ready strategy document. My actual process, built into a reusable Claude prompt — run it yourself with any idea.</p>
+    </div>
+    <div class="entry-right">
+      <button class="btn btn-fill" onclick="openModal('strategy')">Copy prompt ↗</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- MODAL: Invoice Generator -->
+<div class="modal-overlay" id="modal-invoice" onclick="if(event.target===this)closeModal('invoice')">
+  <div class="modal-box">
+    <div class="modal-header">
+      <span class="modal-title">Invoice Generator</span>
+      <button class="modal-close" onclick="closeModal('invoice')">&#x2715; Close</button>
+    </div>
+    <p class="modal-desc">Paste into Claude with Notion connected to generate a client invoice from your time entries.</p>
+    <div class="modal-prompt" id="prompt-invoice">You are a billing assistant. I need you to create a client invoice.
+
+1. Search my Notion for time entries for [CLIENT NAME] from [START DATE] to [END DATE].
+2. For each entry, pull the date, task description, and hours worked.
+3. Calculate each line item: hours x [HOURLY RATE].
+4. Write outcome-based descriptions (e.g. "Strategy session and kickoff" not just "call").
+5. Generate a professional invoice as a Word document (.docx) with:
+   - FROM: [YOUR NAME / COMPANY]
+   - BILL TO: [CLIENT NAME]
+   - Invoice number, date, due date (15 days out)
+   - Line items table: Date | Description | Hours | Rate | Amount
+   - Subtotal and Total Due rows
+   - Payment instructions section
+6. Save and share the file.
+
+Replace all [BRACKETS] with your own details before running.</div>
+    <button class="modal-copy-btn" onclick="copyPrompt('invoice')">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      <span id="copy-label-invoice">Copy to clipboard</span>
+    </button>
+  </div>
+</div>
+
+<!-- MODAL: Platform Strategy Builder -->
+<div class="modal-overlay" id="modal-strategy" onclick="if(event.target===this)closeModal('strategy')">
+  <div class="modal-box">
+    <div class="modal-header">
+      <span class="modal-title">Platform Strategy Builder</span>
+      <button class="modal-close" onclick="closeModal('strategy')">&#x2715; Close</button>
+    </div>
+    <p class="modal-desc">Paste into Claude with your business idea — builds a 9-element framework first, then expands into a full strategy doc.</p>
+    <div class="modal-prompt" id="prompt-strategy">I want to build a platform strategy for [YOUR BUSINESS IDEA].
+
+STAGE 1 - Generate a 9-element pitch framework:
+1. CLEAR PROBLEM - What broken reality does this solve?
+2. UNIQUE SOLUTION - What does this product do? Who is it built by and for?
+3. TARGET MARKET - Who are the customers? Include TAM, revenue size, growth signal.
+4. HOW YOU MAKE MONEY - Revenue model with a 3-year arc (Year to Milestone to $ARR).
+5. TRACTION - What proof points, prior work, or relationships exist?
+6. GO-TO-MARKET - Phase 1 / Phase 2 / Phase 3. Start with network before scaling.
+7. TEAM - Who is behind this and why are they uniquely qualified?
+8. IMPACT AND VISION - What does the world look like when this wins?
+9. CTA - What is the specific ask right now?
+
+Keep each section to 2-5 punchy sentences. End by asking what to sharpen.
+
+STAGE 2 - Only after I approve, expand into a full platform strategy doc.
+Tone: confident, mission-aware, data-forward, never hedging.
+
+My idea: [DESCRIBE YOUR BUSINESS IDEA IN 2-3 SENTENCES]</div>
+    <button class="modal-copy-btn" onclick="copyPrompt('strategy')">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      <span id="copy-label-strategy">Copy to clipboard</span>
+    </button>
+  </div>
 </div>
 
 <script>
@@ -276,6 +386,16 @@ function openShelf(){
 }
 function closeShelf(){
   document.getElementById('shelf-page').classList.remove('open');
+}
+function openModal(id){document.getElementById('modal-'+id).classList.add('open')}
+function closeModal(id){document.getElementById('modal-'+id).classList.remove('open')}
+function copyPrompt(id){
+  const text=document.getElementById('prompt-'+id).innerText;
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn=document.getElementById('copy-label-'+id);
+    btn.textContent='Copied!';
+    setTimeout(()=>{btn.textContent='Copy to clipboard'},2000);
+  });
 }
 </script>
 
