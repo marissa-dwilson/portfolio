@@ -16,6 +16,7 @@
   --mono:'DM Mono',monospace;
 }
 html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:56px}
 body{background:var(--white);color:var(--text);font-family:var(--sans);font-weight:300}
 a{color:var(--sky-accent);text-decoration:none}
 a:hover{text-decoration:underline}
@@ -289,7 +290,7 @@ footer{border-top:0.5px solid var(--rule);padding:2rem;text-align:center}
 <nav>
   <div class="nav-links">
     <a href="#process">Process</a>
-    <a href="playground.html">Playground</a>
+    <a href="/playground">Playground</a>
     <a href="#capsoul">Capsoul</a>
     <a href="https://substack.com/@marissadwilson" target="_blank">Substack</a>
     <a href="mailto:m@marissadwilson.com">Contact</a>
@@ -330,7 +331,7 @@ footer{border-top:0.5px solid var(--rule);padding:2rem;text-align:center}
     <div class="hero-ctas">
       <a class="btn btn-fill" href="#contact">Get in touch</a>
       <a class="btn" href="https://www.linkedin.com/in/marissadwilson/" target="_blank">LinkedIn ↗</a>
-      <a class="btn" href="playground.html" target="_blank">My AI Playground ↗</a>
+      <a class="btn" href="/playground" target="_blank">My AI Playground ↗</a>
     </div>
   </div>
   <div class="hero-photo-wrap">
@@ -403,7 +404,7 @@ footer{border-top:0.5px solid var(--rule);padding:2rem;text-align:center}
         <div style="font-family:var(--sans);font-size:19px;font-weight:400;color:var(--ink)">See more product work →</div>
         <div style="font-size:12px;color:var(--muted);margin-top:4px;font-weight:300">In-depth case studies, research, demos, and product links</div>
       </div>
-      <a class="btn btn-fill" href="playground.html" target="_blank">View Playground ↗</a>
+      <a class="btn btn-fill" href="/playground" target="_blank">View Playground ↗</a>
     </div>
   </div>
 </section>
@@ -568,6 +569,29 @@ function copyPrompt(id){
 <footer>
   <div class="footer-text">© 2026 Marissa Denise Wilson · Built with Claude</div>
 </footer>
+
+<script>
+// Menu links scroll to sections without putting #section in the address bar
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var el=document.getElementById(a.getAttribute('href').slice(1));
+    if(!el) return;
+    e.preventDefault();
+    el.scrollIntoView({behavior:'smooth'});
+  });
+});
+// Arriving from another page (e.g. the Playground menu): scroll to the section, then tidy the URL
+(function(){
+  var target=null;
+  try{target=sessionStorage.getItem('scrollTo');sessionStorage.removeItem('scrollTo');}catch(e){}
+  if(!target&&location.hash) target=location.hash.slice(1);
+  if(location.hash) history.replaceState(null,'',location.pathname+location.search);
+  if(target) window.addEventListener('load',function(){
+    var el=document.getElementById(target);
+    if(el) el.scrollIntoView();
+  });
+})();
+</script>
 
 </body>
 </html>

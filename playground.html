@@ -213,10 +213,10 @@ footer{border-top:0.5px solid var(--rule);padding:2rem 3rem;display:flex;align-i
 <nav>
   <button class="nav-back" onclick="history.back()">← Portfolio</button>
   <div class="nav-links">
-    <a href="index.html#process">Process</a>
-    <a href="index.html#playground">Playground</a>
-    <a href="index.html#capsoul">Capsoul</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="/#process">Process</a>
+    <a href="/#playground">Playground</a>
+    <a href="/#capsoul">Capsoul</a>
+    <a href="/#contact">Contact</a>
   </div>
 </nav>
 
@@ -403,6 +403,17 @@ function copyPrompt(id){
   <span class="footer-text">© 2026 Marissa Denise Wilson</span>
   <button class="footer-back" onclick="history.back()">← Back to portfolio</button>
 </footer>
+
+<script>
+// Menu links back to portfolio sections: go to the homepage and scroll there, no #section in the URL
+document.querySelectorAll('a[href^="/#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    try{sessionStorage.setItem('scrollTo',a.getAttribute('href').slice(2));}catch(err){return;}
+    e.preventDefault();
+    location.href='/';
+  });
+});
+</script>
 
 </body>
 </html>
