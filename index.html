@@ -27,6 +27,15 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.94);backdrop
 .nav-links{display:flex;gap:3rem}
 .nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;text-decoration:none;transition:color 0.2s}
 .nav-links a:hover{color:var(--sky-accent)}
+.nav-links{align-items:center}
+.nav-links a.nav-cta{color:var(--white);background:var(--sky-accent);border:0.5px solid var(--sky-accent);border-radius:2px;padding:8px 14px;white-space:nowrap}
+.nav-links a.nav-cta:hover{background:var(--navy-mid);border-color:var(--navy-mid);color:var(--white)}
+@media(max-width:768px){
+  nav{padding:0 1rem;justify-content:flex-start}
+  .nav-links{gap:1.5rem;overflow-x:auto;scrollbar-width:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{white-space:nowrap}
+}
 
 /* HERO */
 .hero{max-width:1100px;margin:0 auto;padding:2.5rem 3rem;display:grid;grid-template-columns:1fr 320px;gap:4rem;align-items:center;min-height:calc(100vh - 56px)}
@@ -295,6 +304,7 @@ footer{border-top:0.5px solid var(--rule);padding:2rem;text-align:center}
     <a href="#capsoul">Capsoul</a>
     <a href="https://substack.com/@marissadwilson" target="_blank">Substack</a>
     <a href="mailto:m@marissadwilson.com">Contact</a>
+    <a class="nav-cta" href="/build-lab">Join the Build Lab</a>
   </div>
 </nav>
 
