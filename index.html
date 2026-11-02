@@ -295,6 +295,22 @@ footer{border-top:0.5px solid var(--rule);padding:2rem;text-align:center}
   .project-row{grid-template-columns:1fr;gap:0.25rem}
   .section-inner{padding:3.5rem 1.5rem}
 }
+
+/* Phone fixes: keep the Capsoul stats, process cards and Substack card inside the screen */
+.case-metric{min-width:0}
+@media(max-width:768px){
+  .case-hero{padding:2rem 1.5rem}
+  .case-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .case-metric{padding:1rem}
+  .case-metric-num{font-size:26px}
+  .case-title{font-size:38px !important}
+  .substack-card{flex-direction:column;align-items:flex-start !important;gap:1.5rem !important;padding:2rem 1.5rem !important}
+  .substack-card-title{font-size:36px !important}
+}
+@media(max-width:480px){
+  .case-metrics{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -552,10 +568,10 @@ function copyPrompt(id){
 <!-- SUBSTACK -->
 <section id="experience">
   <div class="section-inner">
-    <div style="background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:8px;padding:3.5rem;display:flex;align-items:center;justify-content:space-between;gap:3rem">
+    <div class="substack-card" style="background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:8px;padding:3.5rem;display:flex;align-items:center;justify-content:space-between;gap:3rem">
       <div>
         <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.15em;color:var(--sky-mid);text-transform:uppercase;margin-bottom:1rem">Newsletter</div>
-        <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:48px;font-weight:300;color:var(--white);line-height:1.05;margin-bottom:0.75rem">Follow me on <em style="font-style:italic;color:var(--sky-mid)">Substack</em></div>
+        <div class="substack-card-title" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:48px;font-weight:300;color:var(--white);line-height:1.05;margin-bottom:0.75rem">Follow me on <em style="font-style:italic;color:var(--sky-mid)">Substack</em></div>
         <p style="font-size:15px;color:rgba(255,255,255,0.55);line-height:1.8;font-weight:300;max-width:480px">Thoughts on entrepreneurship, building in public, and the stuff nobody talks about.</p>
       </div>
       <a href="https://substack.com/@marissadwilson" target="_blank" style="display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:11px 22px;border:0.5px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.85);border-radius:2px;text-decoration:none;white-space:nowrap;transition:all 0.2s" onmouseover="this.style.background='rgba(255,255,255,0.12)';this.style.color='white'" onmouseout="this.style.background='';this.style.color='rgba(255,255,255,0.85)'">Read on Substack ↗</a>
