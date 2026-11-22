@@ -3,223 +3,535 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Build Lab — Marissa Denise Wilson</title>
-<meta name="description" content="A four-week group program for founders and service providers. Use AI to build your website, app, or digital product, then put it in front of paying customers.">
+<title>Build Lab — From zero to revenue | Marissa Denise Wilson</title>
+<meta name="description" content="Four weeks to build an app or website, position it, and launch it with AI. A small monthly cohort, limited to 10 builders.">
 <link rel="canonical" href="https://marissadwilson.com/build-lab">
-<meta property="og:title" content="Build Lab — From idea to income in four weeks">
-<meta property="og:description" content="Use AI to build your website, app, or digital product, then put it in front of paying customers.">
+<meta property="og:title" content="Build Lab — From zero to revenue">
+<meta property="og:description" content="Four weeks to build an app or website, position it, and launch it with AI. Limited to 10 builders a month.">
 <meta property="og:url" content="https://marissadwilson.com/build-lab">
 <meta property="og:image" content="https://marissadwilson.com/images/marissa-build-lab.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,700&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
 <style>
+:root{
+  --paper:#fbfaf7; --white:#ffffff; --ink:#1b2a3b; --text:#3d4b5c; --muted:#5f6d7d;
+  --accent:#4a8fc2; --accent-ink:#2c6d9e; --sky:#e3f0f9; --sky-2:#cfe4f3; --rule:#dde6ee;
+  --dark:#1b2a3b; --dark-2:#23364a; --term:#15212e; --term-text:#c9d9e8; --term-dim:#7f95ab; --term-accent:#8cc4ea;
+  --sans:'DM Sans',system-ui,-apple-system,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace; --serif:'Newsreader',Georgia,serif;
+}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
-section[id]{scroll-margin-top:56px}
-body{margin:0;background:#ffffff}
-a{color:#4a9ec5}a:hover{color:#1e2d38}
-/* NAV — matches the main site */
-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.94);backdrop-filter:blur(12px);border-bottom:0.5px solid #cee5f2;padding:0 2.5rem;display:flex;align-items:center;justify-content:center;height:56px}
+section[id]{scroll-margin-top:64px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent-ink)}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-0.02em;line-height:1.08}
+h2 em,h1 em{font-style:italic;color:var(--accent)}
+p{margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.section{padding:clamp(64px,9vw,104px) 0;border-top:1px solid var(--rule)}
+.label{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-ink)}
+.h2{font-size:clamp(32px,4.6vw,48px)}
+.lede{font-size:clamp(17px,1.6vw,19px);color:var(--text);max-width:620px}
+.pill{display:inline-flex;align-items:center;font-family:var(--mono);font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:#24527a;background:var(--sky);border:1px solid var(--sky-2);border-radius:100px;padding:5px 12px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 24px;border-radius:6px;font-family:var(--sans);font-weight:700;font-size:15px;text-decoration:none;border:1.5px solid transparent;transition:background .2s,color .2s,border-color .2s;cursor:pointer}
+.btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-primary:hover{background:#3a7bad;border-color:#3a7bad;color:#fff}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,0.4)}
+.btn-ghost:hover{border-color:#fff;color:#fff}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+
+/* NAV — same links as the main site */
+nav{position:sticky;top:0;z-index:100;background:rgba(251,250,247,0.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);height:56px;display:flex;align-items:center;justify-content:center;padding:0 2.5rem}
 .nav-links{display:flex;align-items:center;gap:3rem}
-.nav-links a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#6b8a9a;text-transform:uppercase;text-decoration:none;transition:color 0.2s;white-space:nowrap}
-.nav-links a:hover{color:#4a9ec5}
-.nav-links a.nav-cta{color:#ffffff;background:#4a9ec5;border:0.5px solid #4a9ec5;border-radius:2px;padding:8px 14px}
-.nav-links a.nav-cta:hover{background:#2d5a72;border-color:#2d5a72;color:#ffffff}
-.btn-fill:hover{background:#2d5a72 !important;border-color:#2d5a72 !important}
-.btn-line:hover{background:#edf6fb !important}
-.btn-dark:hover{background:#daeef9 !important}
+.nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.nav-links a:hover{color:var(--accent-ink)}
+.nav-links a.nav-cta{color:#fff;background:var(--accent);border-radius:4px;padding:8px 14px}
+.nav-links a.nav-cta:hover{background:#3a7bad;color:#fff}
 @media(max-width:768px){
   nav{padding:0 1rem;justify-content:flex-start}
-  .nav-links{gap:1.5rem;overflow-x:auto;scrollbar-width:none}
+  .nav-links{gap:1.5rem;overflow-x:auto;scrollbar-width:none;width:100%}
   .nav-links::-webkit-scrollbar{display:none}
-  .nav-links{width:100%}
-  .nav-links a.nav-cta{position:sticky;right:0;margin-left:auto;flex-shrink:0;box-shadow:-16px 0 12px 4px rgba(255,255,255,0.96)}
+  .nav-links a.nav-cta{position:sticky;right:0;margin-left:auto;flex-shrink:0;box-shadow:-16px 0 12px 4px rgba(251,250,247,0.96)}
 }
+
+/* Window chrome (terminal + cards) */
+.win{border-radius:10px;overflow:hidden}
+.win-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;font-family:var(--mono);font-size:10.5px;letter-spacing:0.08em}
+.win-bar i{width:9px;height:9px;border-radius:50%;display:block}
+.win-bar span{margin-left:8px}
+
+/* HERO */
+.hero{background:var(--dark);color:#fff;padding:clamp(56px,8vw,96px) 0}
+.hero-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,72px);align-items:center}
+.hero .label{color:var(--term-accent)}
+.hero h1{font-size:clamp(52px,8vw,88px);line-height:0.98;margin-top:18px}
+.hero h1 em{color:var(--term-accent);white-space:nowrap}
+.hero-sub{font-size:clamp(18px,1.8vw,21px);color:#d6e2ee;margin-top:22px;max-width:30ch}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-meta{margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.14);display:flex;flex-wrap:wrap;gap:6px 22px;font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--term-dim)}
+.hero-meta strong{color:#fff;font-weight:500}
+.term{background:var(--term);border:1px solid #2a3d52;box-shadow:0 30px 60px -30px rgba(0,0,0,0.6)}
+.term .win-bar{background:#1c2a39;border-bottom:1px solid #2a3d52;color:var(--term-dim)}
+.term .win-bar i{background:#3a4d62}
+.term-body{padding:26px 26px 30px;font-family:var(--mono);font-size:clamp(12px,1.25vw,14px);line-height:2;color:var(--term-text)}
+.term-row{display:grid;grid-template-columns:20px 72px 80px 1fr;column-gap:8px}
+.term-row .arrow{color:var(--term-dim)}
+.term-row .done{color:var(--term-accent)}
+.term-row .live{color:#fff;background:var(--accent);padding:0 6px;justify-self:start;line-height:1.6;align-self:center}
+.cursor{display:inline-block;width:8px;height:1.1em;background:var(--term-accent);vertical-align:-3px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.cursor{animation:none}}
+
+/* PROBLEM */
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:clamp(36px,6vw,72px);align-items:center}
+.problem h2{font-size:clamp(40px,6vw,64px)}
+.problem h2 .few{display:block;margin-top:clamp(20px,4vw,48px);font-style:italic;color:var(--accent)}
+.errors-found{font-family:var(--mono);font-size:12px;color:var(--accent-ink);margin-top:24px}
+.err-stack{display:flex;flex-direction:column;gap:14px}
+.err{background:var(--white);border:1px solid var(--rule);box-shadow:0 14px 30px -20px rgba(27,42,59,0.3)}
+.err .win-bar{background:#f2f5f8;border-bottom:1px solid var(--rule);color:var(--accent-ink);font-weight:500}
+.err .win-bar i{background:#c8d3dd}
+.err-body{padding:16px 20px 18px}
+.err-body .q{font-size:19px;font-weight:700;color:var(--ink)}
+.err-body .q em{color:var(--accent);font-style:normal}
+.err-body p{color:var(--text);font-size:15px;margin-top:4px}
+
+/* WEEKS */
+.join-intro{color:var(--text);font-size:clamp(18px,1.7vw,21px);font-weight:500}
+.join-intro em{font-style:italic;color:var(--accent);font-weight:700}
+.weeks{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;position:relative}
+.weeks::before{content:"";position:absolute;top:9px;left:10px;right:10px;height:2px;background:var(--sky-2)}
+.weeks li{position:relative}
+.dot{width:20px;height:20px;border-radius:50%;background:var(--paper);border:2px solid var(--accent);display:block;position:relative;z-index:1}
+.weeks li:last-child .dot{background:var(--accent)}
+.live-tag{position:absolute;top:-1px;left:28px;font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:0.1em;color:#fff;background:var(--ink);border-radius:100px;padding:3px 8px}
+.wk{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;color:var(--accent-ink);margin-top:20px;display:block}
+.weeks h3{font-size:21px;margin-top:8px;letter-spacing:-0.01em}
+.weeks p{color:var(--text);font-size:15px;margin-top:8px}
+@media(max-width:760px){
+  .weeks{grid-template-columns:1fr;gap:26px;padding-left:36px}
+  .weeks::before{top:10px;bottom:10px;left:9px;right:auto;width:2px;height:auto}
+  .dot{position:absolute;left:-36px;top:0}
+  .live-tag{left:auto;right:auto;position:static;display:inline-block;margin-left:10px}
+  .wk{margin-top:0;display:inline-block}
+}
+.between{margin-top:40px;background:var(--sky);border:1px solid var(--sky-2);border-radius:8px;padding:20px 24px;color:#24425f;font-size:15px}
+.between strong{color:var(--ink)}
+
+/* WHO */
+.who-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px;margin-top:36px}
+.card{background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:28px}
+.card h3{font-size:20px;margin-top:10px;letter-spacing:-0.01em}
+.card p{color:var(--text);font-size:15px;margin-top:8px}
+
+/* COMPARE */
+.compare-wrap{margin-top:36px;overflow-x:auto;border:1px solid var(--rule);border-radius:10px;background:var(--white)}
+table.compare{width:100%;min-width:620px;border-collapse:collapse;font-size:15px}
+.compare th,.compare td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--rule)}
+.compare thead th{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);background:#f6f8fa}
+.compare tbody th{font-weight:700;color:var(--ink)}
+.compare td{color:var(--muted)}
+.compare td.yes{color:var(--ink);font-weight:500}
+.compare td.yes::before{content:"✓";color:var(--accent);font-weight:700;margin-right:8px}
+.compare tr.us th,.compare tr.us td{background:var(--ink);color:#fff;border-bottom:none}
+.compare tr.us td.yes::before{color:var(--term-accent)}
+.whyme{margin-top:20px;background:var(--sky);border:1px solid var(--sky-2);border-radius:10px;padding:22px 26px}
+.whyme .label{color:#24527a}
+.whyme p{font-size:clamp(18px,1.8vw,21px);font-weight:500;color:var(--ink);margin-top:6px}
+
+/* PROOF */
+.proof-list{display:flex;flex-direction:column;gap:20px;margin-top:40px}
+.proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(24px,4vw,44px);align-items:center;background:var(--white);border:1px solid var(--rule);border-radius:12px;padding:clamp(20px,3vw,32px)}
+.shot{border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:#fff;box-shadow:0 18px 36px -24px rgba(27,42,59,0.35)}
+.shot .win-bar{background:#f2f5f8;border-bottom:1px solid var(--rule);color:var(--muted)}
+.shot .win-bar i{background:#c8d3dd}
+.shot-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.proof h3{font-size:clamp(22px,2.4vw,26px)}
+.proof h3 em{font-style:italic;color:var(--accent)}
+.proof .desc{color:var(--text);font-size:15px;margin-top:10px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
+.stat{border-top:1px solid var(--rule);padding-top:12px}
+.stat b{display:block;font-size:clamp(24px,2.6vw,30px);letter-spacing:-0.02em;line-height:1.1}
+.stat span{display:block;font-size:13px;color:var(--muted);margin-top:4px;line-height:1.4}
+.stat-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:480px){.stats{grid-template-columns:1fr 1fr}}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(36px,6vw,72px);align-items:center}
+.about p.body{color:var(--text);margin-top:14px}
+.portrait{position:relative;max-width:360px;justify-self:center;width:100%;aspect-ratio:2/3;padding:0 18px 18px 0}
+.portrait::before{content:"";position:absolute;top:18px;left:18px;right:0;bottom:0;background:var(--sky-2);border-radius:6px}
+.portrait img{position:relative;width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:6px}
+
+/* INVESTMENT + COHORT */
+.invest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:20px;margin-top:36px;align-items:stretch}
+.included{background:var(--white);border:1px solid var(--rule);border-radius:12px;padding:30px;display:flex;flex-direction:column}
+.included ul{list-style:none;margin:14px 0 0;padding:0}
+.included li{padding:10px 0;border-bottom:1px solid var(--rule);font-weight:500}
+.included li::before{content:"✓";color:var(--accent);font-weight:700;margin-right:10px}
+.price{margin-top:auto;padding-top:26px;display:flex;align-items:baseline;gap:10px}
+.price b{font-size:clamp(48px,6vw,60px);letter-spacing:-0.03em;line-height:1}
+.price span{color:var(--muted)}
+.value-line{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--text);margin-top:10px}
+
+.cohort{background:var(--dark);color:#fff;border-radius:12px;padding:30px;display:flex;flex-direction:column;gap:16px}
+.cohort .label{color:var(--term-accent)}
+.cohort-status{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--term-dim)}
+.cohort-status:empty{display:none}
+.cohort h3{font-size:clamp(28px,3.4vw,36px)}
+.cohort-when{color:#d6e2ee}
+.seats{display:flex;gap:7px;flex-wrap:wrap;margin-top:4px}
+.seat{width:22px;height:22px;border-radius:50%;border:2px solid var(--term-accent)}
+.seat.taken{background:var(--term-accent)}
+.seats-left{font-size:20px;font-weight:700}
+.seats-left.urgent{color:var(--term-accent)}
+.deadline{font-family:var(--mono);font-size:12px;letter-spacing:0.04em;color:var(--term-dim)}
+.countdown{font-family:var(--mono);font-size:12px;color:#fff;background:rgba(140,196,234,0.16);border:1px solid rgba(140,196,234,0.35);border-radius:6px;padding:8px 12px;align-self:flex-start}
+.countdown:empty{display:none}
+.cohort .btn{align-self:flex-start;margin-top:6px}
+.cohort .btn.white{background:#fff;color:var(--ink);border-color:#fff}
+.cohort .btn.white:hover{background:var(--sky);border-color:var(--sky)}
+.cohort-note{font-size:13px;color:var(--term-dim)}
+
+/* PROGRAMS */
+.programs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:28px;align-items:center;background:var(--white);border:1px solid var(--rule);border-radius:12px;padding:clamp(26px,4vw,44px)}
+.programs p{color:var(--text);margin-top:12px}
+
+footer{border-top:1px solid var(--rule);padding:26px 20px;text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:0.14em;color:var(--muted)}
 </style>
 </head>
 <body>
-<div style="width: 100%; background: #ffffff; color: #1e2d38; font-family: 'Outfit', system-ui, sans-serif; -webkit-font-smoothing: antialiased">
 
 <nav>
   <div class="nav-links">
     <a href="/#process">Process</a>
     <a href="/playground">Playground</a>
     <a href="/#capsoul">Capsoul</a>
-    <a href="https://substack.com/@marissadwilson" target="_blank">Substack</a>
+    <a href="https://substack.com/@marissadwilson" target="_blank" rel="noopener">Substack</a>
     <a href="mailto:m@marissadwilson.com">Contact</a>
-    <a class="nav-cta" href="https://pay.bluevine.com/p/fd7683542dca45ca88ca49253a70886f/pay/">Join the Build Lab</a>
+    <a class="nav-cta" href="#join">Join the Build Lab</a>
   </div>
 </nav>
 
-<section style="max-width: 900px; margin: 0 auto; padding: clamp(48px, 7vw, 72px) 20px clamp(64px, 9vw, 104px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: clamp(40px, 6vw, 72px); align-items: center">
-<div style="display: flex; flex-direction: column; gap: 20px">
-<h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(56px, 7vw, 76px); line-height: 1; letter-spacing: -0.01em; color: #1e2d38">Build <em style="color: #4a9ec5; font-weight: 400">Lab</em></h1>
-<div aria-hidden="true" style="width: 40px; height: 1px; background: #4a9ec5"></div>
-<p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(24px, 2.6vw, 30px); line-height: 1.35; color: #2c3e54">From idea to income in four weeks.</p>
-<p style="margin: 0; font-size: 15px; line-height: 1.75; color: #2c4052">Use AI to build your website, app, or digital product, then put it in front of paying customers.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.14em">
-<a class="btn-fill" href="https://pay.bluevine.com/p/fd7683542dca45ca88ca49253a70886f/pay/" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; background: #4a9ec5; border: 1px solid #4a9ec5; border-radius: 2px; text-decoration: none; color: #ffffff">JOIN THE BUILD LAB</a>
-<a class="btn-line" href="#how" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; background: #ffffff; border: 1px solid #4a9ec5; border-radius: 2px; text-decoration: none; color: #4a9ec5">HOW IT WORKS ↓</a>
-</div>
-</div>
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="label">Introducing the Build Lab</p>
+      <h1>From zero<br><em>to revenue.</em></h1>
+      <p class="hero-sub">Four weeks to build an app or website, position it, and launch it with AI.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#join">Claim your spot <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="#how">How it works</a>
+      </div>
+      <div class="hero-meta">
+        <span data-hero-cohort>Next cohort: <strong>January 2027</strong></span>
+        <span>Limited to <strong>10 builders</strong> a month</span>
+      </div>
+    </div>
+    <div class="win term" role="img" aria-label="Terminal showing the Build Lab: week 1 idea chosen, week 2 product built, week 3 offer positioned, week 4 launch live">
+      <div class="win-bar" aria-hidden="true"><i></i><i></i><i></i><span>build-lab — zsh</span></div>
+      <div class="term-body" aria-hidden="true">
+        <div><span style="color:var(--term-accent)">$</span> buildlab start</div>
+        <div class="term-row"><span class="arrow">→</span><span>week 1</span><span>idea</span><span class="done">chosen</span></div>
+        <div class="term-row"><span class="arrow">→</span><span>week 2</span><span>product</span><span class="done">built</span></div>
+        <div class="term-row"><span class="arrow">→</span><span>week 3</span><span>offer</span><span class="done">positioned</span></div>
+        <div class="term-row"><span class="arrow">→</span><span>week 4</span><span>launch</span><span class="live">live</span></div>
+        <div><span style="color:var(--term-accent)">$</span> <span class="cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</header>
 
-<div style="position: relative; padding: 0 18px 18px 0">
-<div aria-hidden="true" style="position: absolute; top: 18px; left: 18px; right: 0; bottom: 0; background: #daeef9"></div>
-<div style="position: relative; display: flex; flex-direction: column; border-radius: 8px; overflow: hidden; border: 1px solid #c9dceb; box-shadow: 0 20px 40px -20px rgba(23,39,60,0.25); font-family: 'DM Mono', ui-monospace, monospace">
-<div style="height: 34px; background: #eef3f7; border-bottom: 1px solid #cee5f2; display: flex; align-items: center; gap: 7px; padding: 0 14px">
-<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #c9d4de"></span>
-<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #c9d4de"></span>
-<span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #c9d4de"></span>
-<span style="margin-left: 10px; font-size: 10px; letter-spacing: 0.12em; color: #6b8a9a">experiment_01.log</span>
-</div>
-<div style="background: #1e2d38; padding: 26px 24px; display: flex; flex-direction: column; gap: 9px; font-size: clamp(11px, 1.15vw, 12.5px); line-height: 1.5; color: #cfe3f0">
-<p style="margin: 0; color: #ffffff"><span style="color: #9fd0ee">$</span> buildlab start --cohort jan-2027</p>
-<p style="margin: 0 0 6px; color: #8fa6bb">// hypothesis: your idea can make money</p>
-<p style="margin: 0">→ scope idea ........... <span style="color: #9fd0ee">done</span></p>
-<p style="margin: 0">→ define customer ...... <span style="color: #9fd0ee">done</span></p>
-<p style="margin: 0">→ build mvp w/ ai ...... <span style="color: #9fd0ee">done</span></p>
-<p style="margin: 0">→ price + package ...... <span style="color: #9fd0ee">done</span></p>
-<p style="margin: 0">→ launch ............... <span style="color: #ffffff; background: #4a9ec5; padding: 0 5px">live</span></p>
-<p style="margin: 12px 0 0; color: #ffffff"><span style="color: #9fd0ee">$</span> watch revenue</p>
-<p style="margin: 0; color: #ffffff">first_sale: incoming<span style="color: #9fd0ee">▍</span></p>
-<p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 10px; letter-spacing: 0.14em; color: #8fa6bb">RESULT: IDEA → PRODUCT → REVENUE</p>
-</div>
-</div>
-</div>
+<!-- PROBLEM -->
+<section class="section problem" style="border-top:none">
+  <div class="wrap problem-grid">
+    <div>
+      <h2>Everyone<br>has ideas.<span class="few">Few execute.</span></h2>
+      <p class="errors-found">› 3 errors found</p>
+    </div>
+    <div class="err-stack">
+      <div class="win err">
+        <div class="win-bar"><i></i><i></i><i></i><span>ERR_DIRECTION</span></div>
+        <div class="err-body"><p class="q">“I don’t know <em>what to do.</em>”</p><p>Which idea? Which customer? What should I build?</p></div>
+      </div>
+      <div class="win err">
+        <div class="win-bar"><i></i><i></i><i></i><span>ERR_HOW_TO</span></div>
+        <div class="err-body"><p class="q">“I don’t know <em>how.</em>”</p><p>So many platforms. So many tools. Where do I start?</p></div>
+      </div>
+      <div class="win err">
+        <div class="win-bar"><i></i><i></i><i></i><span>ERR_NO_TIME</span></div>
+        <div class="err-body"><p class="q">“I don’t have <em>the time.</em>”</p><p>You know what to do and how. It keeps getting pushed.</p></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section style="border-top: 1px solid #cee5f2">
-<div style="max-width: 900px; margin: 0 auto; padding: clamp(56px, 8vw, 88px) 20px; display: flex; flex-direction: column; gap: 28px">
-<p style="margin: 0; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.16em; color: #4a9ec5">WHO IT’S FOR</p>
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 44px); line-height: 1.1; color: #1e2d38">You have the idea. <em style="color: #4a9ec5">You’re stuck on the how.</em></h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px">
-<article style="border: 1px solid #cee5f2; border-radius: 3px; padding: 26px 28px; display: flex; flex-direction: column; gap: 10px">
-<p style="margin: 0; font-family: 'DM Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; color: #4a9ec5">FOUNDERS</p>
-<h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #1e2d38">Building an app or platform</h3>
-<p style="margin: 0; font-size: 14px; line-height: 1.7; color: #2c4052">You want a working version to test with real users before you spend on a dev team.</p>
-</article>
-<article style="border: 1px solid #cee5f2; border-radius: 3px; padding: 26px 28px; display: flex; flex-direction: column; gap: 10px">
-<p style="margin: 0; font-family: 'DM Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; color: #4a9ec5">SERVICE PROVIDERS</p>
-<h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #1e2d38">Turning expertise into a product</h3>
-<p style="margin: 0; font-size: 14px; line-height: 1.7; color: #2c4052">Consultants, coaches, and agencies who want something that sells without adding hours to the calendar.</p>
-</article>
-</div>
-<p style="margin: 0; padding: 26px 30px; background: #edf6fb; border-left: 2px solid #4a9ec5; font-size: clamp(17px, 1.6vw, 19px); line-height: 1.6; color: #1e2d38">Building it is only half the job. The other half is getting people to pay for it. Build Lab covers both.</p>
-</div>
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="wrap">
+    <p class="join-intro">What if you didn’t have to <em>figure it out alone?</em></p>
+    <h2 class="h2" style="margin-top:12px">Join the <em>Build Lab.</em></h2>
+    <p style="margin-top:18px"><span class="pill">Limited to 10 builders a month</span></p>
+    <ol class="weeks">
+      <li><span class="dot"></span><span class="wk">WEEK 1 / IDEA</span><h3>A clear customer</h3><p>Who it’s for, the problem it solves, and why they’ll pay.</p></li>
+      <li><span class="dot"></span><span class="wk">WEEK 2 / BUILD</span><h3>A working first version</h3><p>Your app, site, or tool, live and ready to show people.</p></li>
+      <li><span class="dot"></span><span class="wk">WEEK 3 / POSITION</span><h3>A priced, packaged offer</h3><p>Know what to charge and how to present it.</p></li>
+      <li><span class="dot"></span><span class="live-tag">LIVE</span><span class="wk">WEEK 4 / LAUNCH</span><h3>First sales in motion</h3><p>A written launch plan and your offer in front of real buyers.</p></li>
+    </ol>
+    <p class="between"><strong>Between sessions, you keep building.</strong> You do the work with my guidance, session recordings, and group text support when you get stuck. No developer or code background required.</p>
+  </div>
 </section>
 
-<section style="border-top: 1px solid #cee5f2">
-<div style="max-width: 900px; margin: 0 auto; padding: clamp(56px, 8vw, 88px) 20px; display: flex; flex-direction: column; gap: 32px">
-<div style="display: flex; flex-direction: column; gap: 14px">
-<p style="margin: 0; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.16em; color: #4a9ec5">WHAT WE DO TOGETHER</p>
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 44px); line-height: 1.1; color: #1e2d38">The product <em style="color: #4a9ec5">and</em> the business behind it.</h2>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 16px">
-<article style="border: 1px solid #cee5f2; border-radius: 3px; padding: 30px; display: flex; flex-direction: column; gap: 12px">
-<h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; line-height: 1.1; font-weight: 500; color: #1e2d38">Build</h3>
-<p style="margin: 0; font-size: 14px; line-height: 1.7; color: #2c4052">Scope what your MVP actually needs, then build it with AI tools, step by step. No developer or code background required, and we troubleshoot together when you get stuck.</p>
-</article>
-<article style="border: 1px solid #cee5f2; border-radius: 3px; padding: 30px; display: flex; flex-direction: column; gap: 12px">
-<h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; line-height: 1.1; font-weight: 500; color: #1e2d38">Go to market</h3>
-<p style="margin: 0; font-size: 14px; line-height: 1.7; color: #2c4052">Define your customer and the problem you solve, price and package the offer, and write the launch plan and outreach that turn it into revenue.</p>
-</article>
-</div>
-</div>
+<!-- WHO IT'S FOR -->
+<section class="section">
+  <div class="wrap">
+    <p class="label">Who it’s for</p>
+    <h2 class="h2" style="margin-top:12px">For people who want to <em>build it themselves.</em></h2>
+    <div class="who-grid">
+      <div class="card"><p class="label">Founders</p><h3>Building an app or platform</h3><p>You want a working version to test with real users before you spend on a dev team.</p></div>
+      <div class="card"><p class="label">Service providers</p><h3>Turning expertise into a product</h3><p>Consultants, coaches, and agencies who want something that sells without adding hours to the calendar.</p></div>
+    </div>
+  </div>
 </section>
 
-<section id="how" style="border-top: 1px solid #cee5f2">
-<div style="max-width: 900px; margin: 0 auto; padding: clamp(56px, 8vw, 88px) 20px; display: flex; flex-direction: column; gap: 32px">
-<p style="margin: 0; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.16em; color: #4a9ec5">HOW IT WORKS</p>
-<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: 14px">
-<li style="border: 1px solid #cee5f2; border-radius: 3px; padding: 24px 22px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; color: #4a9ec5">WEEK 01</span>
-<h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #1e2d38">Plan</h3>
-<p style="margin: 0; font-size: 13px; line-height: 1.7; color: #2c4052">Pick what to build, who it’s for, and how it makes money.</p>
-</li>
-<li style="border: 1px solid #cee5f2; border-radius: 3px; padding: 24px 22px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; color: #4a9ec5">WEEK 02</span>
-<h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #1e2d38">Build</h3>
-<p style="margin: 0; font-size: 13px; line-height: 1.7; color: #2c4052">Get your first version working.</p>
-</li>
-<li style="border: 1px solid #cee5f2; border-radius: 3px; padding: 24px 22px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; color: #4a9ec5">WEEK 03</span>
-<h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #1e2d38">Package</h3>
-<p style="margin: 0; font-size: 13px; line-height: 1.7; color: #2c4052">Finish the build and shape the offer.</p>
-</li>
-<li style="border: 1px solid #cee5f2; border-radius: 3px; padding: 24px 22px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; color: #4a9ec5">WEEK 04</span>
-<h3 style="margin: 0; font-size: 17px; font-weight: 600; color: #1e2d38">Launch</h3>
-<p style="margin: 0; font-size: 13px; line-height: 1.7; color: #2c4052">Get real feedback and go after your first sales.</p>
-</li>
-</ol>
-<div style="background: #edf6fb; border-radius: 3px; padding: 22px 26px; display: flex; flex-direction: column; gap: 4px">
-<p style="margin: 0; font-size: 15px; font-weight: 500; color: #1e2d38">Keep building between sessions</p>
-<p style="margin: 0; font-size: 13px; line-height: 1.6; color: #2c4052">You do the work, with session recordings and group text support when you get stuck.</p>
-</div>
-</div>
+<!-- WHY -->
+<section class="section">
+  <div class="wrap">
+    <h2 class="h2">Why the <em>Build Lab.</em></h2>
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead><tr><th scope="col"><span class="sr-only" style="position:absolute;left:-9999px">Option</span></th><th scope="col">You learn to build</th><th scope="col">Live feedback</th><th scope="col">Customers + launch</th><th scope="col">Community</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Self-paced courses</th><td class="yes">Yes</td><td>No</td><td>Rarely</td><td>Sometimes</td></tr>
+          <tr><th scope="row">YouTube or social media</th><td class="yes">Yes</td><td>No</td><td>Rarely</td><td>No</td></tr>
+          <tr><th scope="row">Hiring a developer</th><td>No</td><td>No</td><td>No</td><td>No</td></tr>
+          <tr class="us"><th scope="row">Build Lab</th><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="whyme">
+      <p class="label">// Why me</p>
+      <p>I’ve been building apps since the 2010s, with $500K+ in revenue across launches I’ve led. Now I’m teaching you how.</p>
+    </div>
+  </div>
 </section>
 
-<section style="border-top: 1px solid #cee5f2">
-<div style="max-width: 900px; margin: 0 auto; padding: clamp(56px, 8vw, 88px) 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(36px, 6vw, 64px); align-items: center">
-<div style="display: flex; flex-direction: column; gap: 18px">
-<p style="margin: 0; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.16em; color: #4a9ec5">WHO YOU’RE BUILDING WITH</p>
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(36px, 4.4vw, 48px); line-height: 1; color: #1e2d38">Marissa <em style="color: #4a9ec5">Denise</em> Wilson</h2>
-<div aria-hidden="true" style="width: 40px; height: 1px; background: #4a9ec5"></div>
-<p style="margin: 0; font-size: 15px; line-height: 1.75; color: #2c4052">I’ve spent more than 10 years at the intersection of brand, product, and go-to-market. I started inside startups like Blavity and Enplug, then built Capsoul, my premium travel accessories brand, from concept to $125K in sales with a 70% gross margin.</p>
-<p style="margin: 0; font-size: 15px; line-height: 1.75; color: #2c4052">Today I help early-stage ventures commercialize new products, validate markets, and build revenue infrastructure. I coach founders as an Entrepreneur in Residence at a venture firm’s venture studio, work with student entrepreneurs through programs that have reached more than 5,500 students, and build with AI every day.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 32px; margin-top: 4px">
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span style="font-size: 34px; line-height: 1; font-weight: 700; letter-spacing: -0.02em; color: #1e2d38">$500<sup style="font-size: 13px; font-weight: 500; color: #4a9ec5">K+</sup></span>
-<span style="font-size: 12px; color: #6b8a9a">Revenue across product launches</span>
-</div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<span style="font-size: 34px; line-height: 1; font-weight: 700; letter-spacing: -0.02em; color: #1e2d38">5,500<sup style="font-size: 13px; font-weight: 500; color: #4a9ec5">+</sup></span>
-<span style="font-size: 12px; color: #6b8a9a">Students reached through my programs</span>
-</div>
-</div>
-<div style="margin-top: 6px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.14em">
-<a class="btn-line" href="https://www.marissadwilson.com/playground" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border: 1px solid #4a9ec5; border-radius: 2px; text-decoration: none; color: #4a9ec5">SEE WHAT I’VE BUILT ↗</a>
-</div>
-</div>
-<div style="position: relative; width: 100%; max-width: 340px; justify-self: center; aspect-ratio: 2 / 3; box-sizing: border-box; padding: 0 18px 18px 0">
-<div aria-hidden="true" style="position: absolute; top: 18px; left: 18px; right: 0; bottom: 0; background: #daeef9"></div>
-<img src="/images/marissa-build-lab.jpg" alt="Marissa Denise Wilson outdoors in a Self-Funded t-shirt" style="position: relative; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top">
-</div>
-</div>
+<!-- PROOF -->
+<section class="section">
+  <div class="wrap">
+    <p class="label">What I’ve built</p>
+    <h2 class="h2" style="margin-top:12px">Real products. <em>Real results.</em></h2>
+    <div class="proof-list">
+
+      <article class="proof">
+        <div class="win shot"><div class="win-bar"><i></i><i></i><i></i><span>yepitch.com</span></div><img src="/images/proof-yepitch.jpg" alt="The Young Entrepreneur Pitch Challenge website on yepitch.com" loading="lazy" width="1200" height="483"></div>
+        <div>
+          <h3>We hit a bottleneck at YEI. <em>So I built the fix.</em></h3>
+          <p class="desc">A pitch competition platform for the Young Entrepreneur Institute, now licensed to partners.</p>
+          <div class="stats">
+            <div class="stat"><b>$6K</b><span>saved by building our own platform</span></div>
+            <div class="stat"><b>$10K</b><span>earned licensing it to partners</span></div>
+            <div class="stat"><b>1st beta</b><span>Shawnee State University</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proof">
+        <div class="shot-pair">
+          <div class="win shot"><div class="win-bar"><i></i><i></i><i></i></div><img src="/images/proof-goodlife.jpg" alt="The & GOOD Life Project home page" loading="lazy" width="1200" height="589"></div>
+          <div class="win shot"><div class="win-bar"><i></i><i></i><i></i></div><img src="/images/proof-goodlife-word.jpg" alt="The Choose your word page where customers pick an affirmation" loading="lazy" width="1200" height="777"></div>
+        </div>
+        <div>
+          <h3>Mia had an in-store idea. <em>We took it online.</em></h3>
+          <div class="stats stat-2">
+            <div class="stat"><b>In store</b><span>Customers at her Tulsa shop write an affirmation on a Good Life band.</span></div>
+            <div class="stat"><b>Online</b><span>Now they commit to it digitally and share it on a community wall.</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proof">
+        <div class="win shot"><div class="win-bar"><i></i><i></i><i></i><span>ubiz.biz · Robinson Venture Studio</span></div><img src="/images/proof-rvs.jpg" alt="Robinson Venture Studio page on the UBiz Venture Capital website" loading="lazy" width="1200" height="482"></div>
+        <div>
+          <h3>Piloting the Build Lab <em>inside a venture studio.</em></h3>
+          <p class="desc">Robinson Venture Studio, through UBiz Venture Capital.</p>
+          <div class="stats">
+            <div class="stat"><b>10</b><span>businesses in the current cohort</span></div>
+            <div class="stat"><b>3</b><span>founders with digital products I’m mentoring</span></div>
+            <div class="stat"><b>$100K</b><span>they’re pitching for in December</span></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
 </section>
 
-<section id="join" style="border-top: 1px solid #cee5f2">
-<div style="max-width: 900px; margin: 0 auto; padding: clamp(56px, 8vw, 88px) 20px; display: flex; flex-direction: column; gap: 28px">
-<div style="background: linear-gradient(135deg, #1a3a4a 0%, #2d5a72 100%); border-radius: 4px; padding: clamp(28px, 5vw, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(32px, 5vw, 56px); color: #ffffff">
-<div style="display: flex; flex-direction: column; gap: 18px">
-<p style="margin: 0; font-family: 'DM Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; color: #cfe3f0">YOUR INVESTMENT</p>
-<h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(56px, 7vw, 80px); line-height: 1; color: #ffffff"><em style="color: #9fd0ee">$250</em></h2>
-<p style="margin: 0; font-size: 15px; line-height: 1.7; color: #e3eff7">Four hours live with me, plus recordings and group text support while you build.</p>
-<p style="margin: 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.18); font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 22px; line-height: 1.35; color: #ffffff">Less than you’d spend on a single hour with most developers or consultants.</p>
-<div style="margin-top: 6px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.14em">
-<a class="btn-dark" href="https://pay.bluevine.com/p/fd7683542dca45ca88ca49253a70886f/pay/" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; background: #ffffff; border: 1px solid #ffffff; border-radius: 2px; text-decoration: none; color: #1e2d38">JOIN THE BUILD LAB ↗</a>
-</div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 14px">
-<p style="margin: 0; font-family: 'DM Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; color: #cfe3f0">WHAT YOU WALK AWAY WITH</p>
-<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; background: rgba(255,255,255,0.07); border-radius: 3px">
-<li style="display: flex; gap: 16px; padding: 16px 20px"><span aria-hidden="true" style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; line-height: 22px; color: #9fd0ee">01</span><span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 15px; font-weight: 600; color: #ffffff">A working first version</strong><span style="font-size: 13px; line-height: 1.55; color: #cfe3f0">Your app, site, or tool, live and ready to show people.</span></span></li>
-<li style="display: flex; gap: 16px; padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.12)"><span aria-hidden="true" style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; line-height: 22px; color: #9fd0ee">02</span><span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 15px; font-weight: 600; color: #ffffff">A clear customer</strong><span style="font-size: 13px; line-height: 1.55; color: #cfe3f0">Who it’s for, the problem it solves, and why they’ll pay.</span></span></li>
-<li style="display: flex; gap: 16px; padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.12)"><span aria-hidden="true" style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; line-height: 22px; color: #9fd0ee">03</span><span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 15px; font-weight: 600; color: #ffffff">A priced, packaged offer</strong><span style="font-size: 13px; line-height: 1.55; color: #cfe3f0">Know what to charge and how to present it.</span></span></li>
-<li style="display: flex; gap: 16px; padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.12)"><span aria-hidden="true" style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; line-height: 22px; color: #9fd0ee">04</span><span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 15px; font-weight: 600; color: #ffffff">A launch plan, written</strong><span style="font-size: 13px; line-height: 1.55; color: #cfe3f0">Your first outreach drafted and ready to send.</span></span></li>
-<li style="display: flex; gap: 16px; padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.12)"><span aria-hidden="true" style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; line-height: 22px; color: #9fd0ee">05</span><span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 15px; font-weight: 600; color: #ffffff">Your first sales in motion</strong><span style="font-size: 13px; line-height: 1.55; color: #cfe3f0">Your offer in front of real buyers, with a clear plan to land your first paying customers.</span></span></li>
-</ol>
-</div>
-</div>
-<p style="margin: 0; font-size: 14px; color: #2c4052">Questions? <a href="mailto:m@marissadwilson.com" style="color: #1e2d38">m@marissadwilson.com</a></p>
-</div>
+<!-- ABOUT -->
+<section class="section about">
+  <div class="wrap about-grid">
+    <div>
+      <p class="label">Who you’re building with</p>
+      <h2 class="h2" style="margin-top:12px">Marissa <em>Wilson</em></h2>
+      <p class="label" style="color:var(--muted);margin-top:12px">Entrepreneur + educator · 10+ years building &amp; launching products</p>
+      <p class="body">I’ve spent more than 10 years at the intersection of brand, product, and go-to-market. I started inside startups like Blavity and Enplug, then built Capsoul, my premium travel accessories brand, from concept to $125K in sales with a 70% gross margin.</p>
+      <p class="body">Today I help early-stage ventures commercialize new products, validate markets, and build revenue infrastructure. I coach founders as an Entrepreneur in Residence at a venture firm’s venture studio, work with student entrepreneurs through programs that have reached more than 5,500 students, and build with AI every day.</p>
+      <div class="stats stat-2" style="max-width:420px">
+        <div class="stat"><b>$500K+</b><span>revenue across product launches</span></div>
+        <div class="stat"><b>5,500+</b><span>students reached through my programs</span></div>
+      </div>
+    </div>
+    <div class="portrait"><img src="/images/marissa-build-lab.jpg" alt="Marissa Denise Wilson outdoors in a Self-Funded t-shirt" loading="lazy"></div>
+  </div>
 </section>
 
-<footer style="border-top: 1px solid #cee5f2">
-<p style="margin: 0; padding: 24px 20px; text-align: center; font-family: 'DM Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; color: #6b8a9a">© 2026 MARISSA DENISE WILSON · BUILT WITH CLAUDE</p>
-</footer>
+<!-- INVESTMENT + COHORT -->
+<section class="section" id="join">
+  <div class="wrap">
+    <h2 class="h2">Small cohorts. <em>Real progress.</em></h2>
+    <div class="invest-grid">
+      <div class="included">
+        <p class="label">What’s included · 10 builders per cohort</p>
+        <ul>
+          <li>Four hours live with me</li>
+          <li>Recordings of every session</li>
+          <li>Group text support while you build</li>
+        </ul>
+        <div class="price"><b>$250</b><span>per builder</span></div>
+        <p class="value-line">Less than you’d spend on a single hour with most developers or consultants.</p>
+      </div>
 
-</div>
+      <div class="cohort" id="cohort-card" aria-live="polite">
+        <p class="cohort-status" data-c="prev"></p>
+        <p class="label" data-c="eyebrow">Now enrolling</p>
+        <h3 data-c="title">January 2027 cohort</h3>
+        <p class="cohort-when" data-c="when">Wednesdays · 7–9pm ET</p>
+        <div class="seats" data-c="seats" aria-hidden="true"></div>
+        <p class="seats-left" data-c="left"></p>
+        <p class="deadline" data-c="deadline"></p>
+        <p class="countdown" data-c="countdown"></p>
+        <a class="btn white" data-c="cta" href="https://pay.bluevine.com/p/fd7683542dca45ca88ca49253a70886f/pay/">Claim your spot <span aria-hidden="true">→</span></a>
+        <p class="cohort-note" data-c="note">Four weekly sessions. No one joins after a cohort starts.</p>
+      </div>
+    </div>
+    <p style="margin-top:22px;color:var(--muted);font-size:14px">Questions? <a href="mailto:m@marissadwilson.com">m@marissadwilson.com</a></p>
+  </div>
+</section>
 
+<!-- PROGRAMS -->
+<section class="section">
+  <div class="wrap">
+    <div class="programs">
+      <div>
+        <p class="label">The Build Lab for programs</p>
+        <h2 class="h2" style="margin-top:12px;font-size:clamp(28px,3.6vw,38px)">Bring it to <em>your program.</em></h2>
+        <p>Lead an accelerator, university, or entrepreneurship program? I’ll teach the Build Lab method to your founders, in person or virtual.</p>
+      </div>
+      <div><a class="btn btn-outline" href="mailto:m@marissadwilson.com?subject=Build%20Lab%20for%20our%20program">Let’s talk <span aria-hidden="true">→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 MARISSA DENISE WILSON · BUILT WITH CLAUDE</footer>
+
+<script>
+/* Build Lab cohort card.
+   Rules: cohorts start the first Wednesday of each month, 7–9pm Eastern.
+   Enrollment closes 24 hours before the start, or when 10 seats are paid.
+   The next month opens when the current one fills or starts. Only one month is shown.
+   SEATS_TAKEN is a placeholder until the Stripe counter is connected. */
+(function(){
+  var CAPACITY = 10;
+  var FIRST_COHORT = {y:2027, m:0};          // January 2027
+  var SEATS_TAKEN = {};                      // e.g. {"2027-01": 3} — replaced by Stripe later
+  var PAY_URL = "https://pay.bluevine.com/p/fd7683542dca45ca88ca49253a70886f/pay/";
+  // Review helpers (staging only): ?preview_date=2027-01-05T20:00-05:00&seats=2027-01:10,2027-02:8
+  var qs = new URLSearchParams(location.search);
+  var NOW_OVERRIDE = qs.get("preview_date") ? Date.parse(qs.get("preview_date")) : null;
+  (qs.get("seats") || "").split(",").forEach(function(p){ var kv = p.split(":"); if (kv[1]) SEATS_TAKEN[kv[0]] = +kv[1]; });
+  var MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+  function nyOffsetMinutes(utcMs){
+    var parts = new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hourCycle:"h23",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"}).formatToParts(new Date(utcMs));
+    var p = {}; parts.forEach(function(x){p[x.type]=x.value;});
+    var asUtc = Date.UTC(+p.year, +p.month-1, +p.day, +p.hour % 24, +p.minute);
+    return (asUtc - utcMs) / 60000;
+  }
+  function easternToUtc(y,m,d,h){
+    var guess = Date.UTC(y,m,d,h,0);
+    return guess - nyOffsetMinutes(guess) * 60000;
+  }
+  function firstWednesday(y,m){
+    var dow = new Date(Date.UTC(y,m,1)).getUTCDay();   // 0 Sun … 3 Wed
+    return 1 + ((3 - dow + 7) % 7);
+  }
+  function cohort(y,m){
+    var d = firstWednesday(y,m);
+    var start = easternToUtc(y,m,d,19);
+    var key = y + "-" + String(m+1).padStart(2,"0");
+    return {y:y, m:m, d:d, key:key, name:MONTHS[m]+" "+y, start:start, close:start - 24*3600e3,
+            taken: Math.min(SEATS_TAKEN[key] || 0, CAPACITY)};
+  }
+  function next(c){ return c.m === 11 ? cohort(c.y+1,0) : cohort(c.y,c.m+1); }
+  function fmt(ms, opts){ return new Intl.DateTimeFormat("en-US", Object.assign({timeZone:"America/New_York"}, opts)).format(new Date(ms)); }
+
+  function state(now){
+    // Walk forward from the first cohort to find what to show.
+    var c = cohort(FIRST_COHORT.y, FIRST_COHORT.m), prev = null;
+    for (var i = 0; i < 36; i++){
+      if (now >= c.start){ prev = null; c = next(c); continue; }   // started: gone from the page
+      if (c.taken >= CAPACITY){ prev = c; c = next(c); continue; }  // full: say so, show next month
+      if (now < c.close) return {open:c, prev:prev};               // open for enrollment
+      return {closed:c, upcoming:next(c)};                         // last 24h before start
+    }
+    return {};
+  }
+
+  var card = document.getElementById("cohort-card");
+  if (!card) return;
+  function $(k){ return card.querySelector('[data-c="'+k+'"]'); }
+
+  function render(){
+    var now = NOW_OVERRIDE || Date.now(), s = state(now);
+    var hero = document.querySelector("[data-hero-cohort]");
+    if (s.open){
+      var c = s.open, left = CAPACITY - c.taken;
+      $("prev").textContent = s.prev ? s.prev.name.split(" ")[0] + " — Full" : "";
+      $("eyebrow").textContent = "Now enrolling";
+      $("title").textContent = c.name + " cohort";
+      $("when").textContent = "Starts Wed, " + fmt(c.start,{month:"short",day:"numeric"}) + " · Wednesdays, 7–9pm ET";
+      var seats = $("seats"); seats.innerHTML = "";
+      for (var i = 0; i < CAPACITY; i++){ var dot = document.createElement("span"); dot.className = "seat" + (i < c.taken ? " taken" : ""); seats.appendChild(dot); }
+      $("left").textContent = left <= 3 ? "Only " + left + (left === 1 ? " spot left" : " spots left") : left + " of " + CAPACITY + " spots left";
+      $("left").classList.toggle("urgent", left <= 3);
+      $("deadline").textContent = "Enrollment closes " + fmt(c.close,{weekday:"short",month:"short",day:"numeric"}) + " at 7pm ET";
+      var ms = c.close - now;
+      if (ms <= 3*24*3600e3){
+        var dd = Math.floor(ms/864e5), hh = Math.floor(ms%864e5/36e5), mm = Math.floor(ms%36e5/6e4);
+        $("countdown").textContent = "Closes in " + (dd ? dd + "d " : "") + hh + "h " + mm + "m";
+      } else { $("countdown").textContent = ""; }
+      var cta = $("cta"); cta.style.display = ""; cta.href = PAY_URL;
+      if (hero) hero.innerHTML = "Now enrolling: <strong>" + c.name + "</strong>";
+    } else if (s.closed){
+      $("prev").textContent = "";
+      $("eyebrow").textContent = "Enrollment closed";
+      $("title").textContent = s.closed.name.split(" ")[0] + " is closed";
+      $("when").textContent = s.upcoming.name + " opens Wed, " + fmt(s.closed.start,{month:"short",day:"numeric"}) + " at 7pm ET.";
+      $("seats").innerHTML = ""; $("left").textContent = ""; $("deadline").textContent = ""; $("countdown").textContent = "";
+      $("cta").style.display = "none";
+      if (hero) hero.innerHTML = "Next cohort: <strong>" + s.upcoming.name + "</strong>";
+    }
+  }
+  render();
+  setInterval(render, 60000);
+})();
+</script>
 </body>
 </html>
